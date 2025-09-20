@@ -1,97 +1,84 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📸 Face Detector POC – React Native Vision Camera
 
-# Getting Started
+This is a **Proof of Concept (POC)** showcasing **real-time face detection** in a React Native app using [react-native-vision-camera](https://github.com/cuvent/react-native-vision-camera) and the [react-native-vision-camera-face-detector](https://github.com/rodgomesc/vision-camera-face-detector) plugin.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+It demonstrates how to use **Frame Processors** with **Worklets Core** for efficient on-device ML face detection.
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- 🔍 Detects faces in real-time
+- 🧑‍🤝‍🧑 Supports multiple faces simultaneously
+- 🎯 Provides face bounds, landmarks, and contours
+- ⚡ 100% on-device ML (works offline)
+- 📱 iOS & Android supported
+- ✅ Compatible with **React Native New Architecture**
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
-```
+## 🛠️ Tech Stack
 
-## Step 2: Build and run your app
+- **React Native** `0.81.4`
+- **react-native-vision-camera** `^4.7.2`
+- **react-native-vision-camera-face-detector** `^1.8.9`
+- **react-native-worklets-core** `^1.6.2`
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+---
 
-### Android
+## 📦 Installation
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+1. Install dependencies:
 
 ```sh
-bundle install
+yarn install
 ```
 
-Then, and every time you update your native dependencies, run:
+2. iOS setup:
 
 ```sh
-bundle exec pod install
+cd ios && pod install
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+3. Android setup:  
+   Ensure your `android/build.gradle` has:
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```gradle
+minSdkVersion = 24
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+---
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## ⚙️ Babel Config
 
-## Step 3: Modify your app
+Your `babel.config.js` already has Worklets Core enabled:
 
-Now that you have successfully run the app, let's make changes!
+```js
+module.exports = {
+  presets: ['module:@react-native/babel-preset'],
+  plugins: [['react-native-worklets-core/plugin']],
+};
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+This means you don’t need `react-native-reanimated/plugin` – everything runs via **Worklets Core**.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+---
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🧪 Tested On
 
-## Congratulations! :tada:
+- ✅ iOS 17+ (Xcode 15.4)
+- ✅ Android 13+ (CameraX)
 
-You've successfully run and modified your React Native App. :partying_face:
+---
 
-### Now what?
+## 📌 Notes
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- Requires **camera permission** (`Info.plist` and `AndroidManifest.xml`)
+- Runs better on **physical devices** than emulators
+- Use `frameProcessorFps={5}` to balance CPU load
 
-# Troubleshooting
+---
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## 📄 License
 
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This POC is for demo and learning purposes. MIT License.
