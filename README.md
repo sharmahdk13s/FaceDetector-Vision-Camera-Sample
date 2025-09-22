@@ -1,6 +1,6 @@
 # 📸 Face Detector POC – React Native Vision Camera
 
-This is a **Proof of Concept (POC)** showcasing **real-time face detection** in a React Native app using [react-native-vision-camera](https://github.com/cuvent/react-native-vision-camera) and the [react-native-vision-camera-face-detector](https://github.com/rodgomesc/vision-camera-face-detector) plugin.
+This is a **Proof of Concept (POC)** showcasing **real-time face detection** in a React Native app using [react-native-vision-camera](https://github.com/cuvent/react-native-vision-camera) and the [react-native-vision-camera-face-detector](https://github.com/luicfrr/react-native-vision-camera-face-detector) plugin.
 
 It demonstrates how to use **Frame Processors** with **Worklets Core** for efficient on-device ML face detection.
 
