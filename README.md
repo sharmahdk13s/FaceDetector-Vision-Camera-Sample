@@ -75,7 +75,7 @@ This means you don’t need `react-native-reanimated/plugin` – everything runs
 
 - Requires **camera permission** (`Info.plist` and `AndroidManifest.xml`)
 - Runs better on **physical devices** than emulators
-- Use `frameProcessorFps={5}` to balance CPU load
+- Use `fps={5}` to balance CPU load
 
 ---
 
