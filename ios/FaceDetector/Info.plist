@@ -26,14 +26,19 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>FaceDetector requries camera access to capture photo while detecting face</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>FaceDetector requires Location access for general purpose only</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>FaceDetector requires Mic access for general purpose only</string>
+	<key>RCTNewArchEnabled</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
